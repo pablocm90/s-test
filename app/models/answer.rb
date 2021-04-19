@@ -5,5 +5,4 @@ class Answer < ApplicationRecord
 
   # validations
   validates :content, presence: true
-  validates :right, presence: true
 end
