@@ -26,7 +26,7 @@
 
 
 ## Quizz
- [ ] A quizz has a Title
+ [X] A quizz has a Title
 
  [ ] A quizz has a maximum of 3 questions
 

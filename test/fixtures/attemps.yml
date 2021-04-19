@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sucess_rate: 1.5
+  answered_questions: 1
+  user: one
+  quiz: one
+
+two:
+  sucess_rate: 1.5
+  answered_questions: 1
+  user: two
+  quiz: two
