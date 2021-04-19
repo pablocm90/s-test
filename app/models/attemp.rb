@@ -6,7 +6,7 @@ class Attemp < ApplicationRecord
   has_many :answers, through: :attemp_answers
 
   # validations
-  validates :sucess_rate, numericality: { less_than_or_equal_to: 1, greater_than_or_equal_to: 0 }
+  validates :score, numericality: { less_than_or_equal_to: 1, greater_than_or_equal_to: 0 }
   validates :answered_questions, presence: true,
                                  numericality: { less_than_or_equal_to: 3, greater_than_or_equal_to: 0 }
 
@@ -19,5 +19,5 @@ class Attemp < ApplicationRecord
   # true_answers += 1
   # else
   # false_answer += 1
-  # update sucess_rate true_answers / 3
+  # update score true_answers / 3
 end
