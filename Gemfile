@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.7'
 
 # Needed for simple_form
 gem 'simple_form'
+# Needed for deviser
+gem 'devise'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
