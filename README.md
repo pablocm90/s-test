@@ -1,5 +1,5 @@
 ## Setup
- TO BE COMPLETED
+ TO BE COMPLETED - heroku issue
 
 ## Guidelines
 - Fork this repository
