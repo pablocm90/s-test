@@ -1,8 +1,8 @@
 <div class="home-container">
   <div class="cards">
     <% @quizzes.each do |quiz| %>
-      <%= link_to root_path do %>
-        <div class="quiz-card">
+      <%= link_to new_path do %>
+        <div class="quiz-card" data-quiz-id="<%= quiz.id %>">
           <h4><%= quiz.title %></h4>
           <p><%= quiz.difficulty %></p>
           <!-- <div class="btn-sucess">Start!</div> -->
