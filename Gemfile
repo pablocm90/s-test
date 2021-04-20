@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'simple_form'
 # Needed for deviser
 gem 'devise'
+# Needed for font icons
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
