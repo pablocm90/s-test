@@ -1,0 +1,11 @@
+.navbar {
+  justify-content: space-between;
+  background-color: #175DDC;
+  color: white;
+  a {
+    color: white;
+    text-decoration: none;
+    &:hover {
+    }
+  }
+}
