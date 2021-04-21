@@ -1,14 +1,17 @@
-<h1>New quiz</h1>
+<!-- <h1>New quiz</h1>
 
-<% @quiz.questions.each do |question| %>
-  <form method="post" action="/Attemp/Post">
+<%# @quiz.questions.each do |question| %>
+  <form method="post" action="">
       <fieldset>
-        <legend><%= question.content %></legend>
-          <% question.answers.each do |answer| %>
+        <legend><%#= question.content %></legend>
+          <%# question.answers.each do |answer| %>
             <input type="radio" name="favorite_pet" value="<%= answer.content %>"><%= answer.content %><br>
             <br>
           <% end %>
       </fieldset>
     <input type="submit" value="Submit now">
   </form>
-<% end %>
+<% end %> -->
+
+<!-- First question -->
+<% @quiz.question.first %>

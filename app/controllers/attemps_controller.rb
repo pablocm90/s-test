@@ -10,10 +10,20 @@ class AttempsController < ApplicationController
     @attemp = Attemp.new(attemp_params)
     @attemp.quiz = @quiz
     @attemp.user = current_user
+    if @answer.right == true
+      @attemp.correct_answers += 1
+      @attemp.save
+      redirect_to root_path
+    else
+      @attemp.wrong_answers += 1
+      @attemp.save
+      redirect_to root_path
+    end
+
     # if @attemp.save
-    #   redirect_to dashboard_path
+    #   redirect_to root_path
     # else
-    #   render "boardgames/show"
+    #   render "quizzes/show"
     # end
     # if response.update(answer: answer)
     #   head :ok
@@ -25,9 +35,19 @@ class AttempsController < ApplicationController
     # end
   end
 
+  # def add
+  #   if @answer.right == true
+  #     @attemp.correct_answers += 1
+  #   else
+  #     @attemp.wrong_answers += 1
+  #   end
+  #   @attemp.save
+  #   redirect_to root
+  # end
+
   private
 
   def attemp_params
-    params.require(:attemp).permit(:score, :answered_questions)
+    params.require(:attemp).permit(:score, :correct_answers, :wrong_answers)
   end
 end
