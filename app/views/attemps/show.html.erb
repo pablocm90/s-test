@@ -1,9 +1,19 @@
 <h1>Attemp for <%= @quiz.title %></h1>
+<%= @question.next.content %>
 
 <% @questions.each do |question| %>
   <h4><%= question.content %></h4>
   <% question.answers.each do |answer| %>
-    <p><%#= link_to "Accept", accept_booking_path(booking), method: :patch %></p>
-    <p><%= answer.content %></p>
+    <% if answer.right == true %>
+      <%= link_to up_score_quiz_attemp_path(@attemp), method: :patch do %>
+        <p><%= answer.right %></p>
+        <p><%= answer.content %></p>
+      <% end %>
+    <% elsif answer.right == false %>
+      <%= link_to down_score_quiz_attemp_path(@attemp), method: :patch do %>
+        <p><%= answer.right %></p>
+        <p><%= answer.content %></p>
+      <% end %>
+    <% end %>
   <% end %>
 <% end %>
