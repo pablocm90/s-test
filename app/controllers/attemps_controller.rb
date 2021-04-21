@@ -1,11 +1,11 @@
 class AttempsController < ApplicationController
-  def new
-    @attemp = Attemp.new
-    @quiz = Quiz.find(params[:quiz_id])
-    @user = current_user
-    @questions = @quiz.questions
-    @attemp_answer = AttempAnswer.new
-  end
+  # def new
+  #   @attemp = Attemp.new
+  #   @quiz = Quiz.find(params[:quiz_id])
+  #   @user = current_user
+  #   @questions = @quiz.questions
+  #   @attemp_answer = AttempAnswer.new
+  # end
 
   def show
     @attemp = Attemp.find(params[:id])
@@ -16,13 +16,6 @@ class AttempsController < ApplicationController
   end
 
   def create
-    # # Added for test
-    # @user = current_user
-    # @quiz = Quiz.find(params[:quiz_id])
-    # # End
-    
-    # attemp = Attemp.create
-    # redirect_to :show
     @quiz = Quiz.find(params[:quiz_id])
     @attemp = Attemp.new(attemp_params)
     @attemp.quiz = @quiz
@@ -33,6 +26,10 @@ class AttempsController < ApplicationController
     else
       redirect_to quiz_path(@quiz)
     end
+  end
+
+  def update_score
+    
   end
 
   private
