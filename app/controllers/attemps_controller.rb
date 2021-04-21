@@ -32,6 +32,7 @@ class AttempsController < ApplicationController
   def up_score
     @attemp = Attemp.find(params[:id])
     @attemp.correct_answers += 1
+    @attemp.update_score
     @attemp.save
   end
 

@@ -3,7 +3,7 @@
 <p>Number of attemps: <%= @attemps.size %></p>
 <p>Last score: 
   <% unless @attemps.last.nil? %>
-    <%= @attemps.last.score.to_i %>%
+    <%= (@attemps.last.score * 100).to_i %>%
   <% else %>
     0
   <% end %>
