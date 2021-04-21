@@ -5,7 +5,6 @@ class AttempsController < ApplicationController
     @questions = @quiz.questions
     @attemp = Attemp.new
     @attemp_answer = AttempAnswer.new
-    raise
   end
 
   def create
