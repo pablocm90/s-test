@@ -1,11 +1,9 @@
 class QuizzesController < ApplicationController
   def show
     @quiz = Quiz.find(params[:id])
-    @title = @quiz.title
-    @difficulty = @quiz.difficulty
+    @user = current_user
     @questions = @quiz.questions
-    @answer = Answer.new
-    @attemp = Attemp.new
+    @attemps = @quiz.attemps
   end
 
   private
