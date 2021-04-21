@@ -1,0 +1,4 @@
+<h1><%= @quiz.title %></h1>
+<p>Difficulty: <%= @quiz.difficulty %></p>
+<p>Attemps: <%= @quiz.attemps.size %></p>
+<div><%= link_to 'Start', new_quiz_attemp_path(@quiz) %></div>

@@ -13,6 +13,14 @@ const printDataId = () => {
           // console.log(response);
           response.json().then((data) => {
                   console.log(data);
+                  // const quizTitle = document.querySelector('.quiz-title');
+                  // console.log(data.title);
+                  // quizTitle.innerText = data.title;
+                  // const quizQuestion = document.querySelector('.quiz-question');
+                  // const quizFirstAnswer = document.querySelector('.first-answer');
+                  // const quizSecondAnswer = document.querySelector('.second-answer');
+                  // const quizThirdAnswer = document.querySelector('.third-answer');
+                  // const quizFourthAnswer = document.querySelector('.fourth-answer');
               });
         });
     });

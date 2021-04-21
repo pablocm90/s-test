@@ -2,8 +2,6 @@ class Attemp < ApplicationRecord
   # associations
   belongs_to :user
   belongs_to :quiz
-  has_many :attemp_answers
-  has_many :answers, through: :attemp_answers
 
   # validations
   validates :score, numericality: { less_than_or_equal_to: 1, greater_than_or_equal_to: 0 }
