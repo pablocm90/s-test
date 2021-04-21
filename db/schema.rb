@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_19_194749) do
+ActiveRecord::Schema.define(version: 2021_04_21_174055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,8 +34,9 @@ ActiveRecord::Schema.define(version: 2021_04_19_194749) do
   end
 
   create_table "attemps", force: :cascade do |t|
-    t.float "score"
-    t.integer "answered_questions", default: 0, null: false
+    t.float "score", default: 0.0, null: false
+    t.integer "correct_answers", default: 0, null: false
+    t.integer "wrong_answers", default: 0, null: false
     t.bigint "user_id", null: false
     t.bigint "quiz_id", null: false
     t.datetime "created_at", precision: 6, null: false
