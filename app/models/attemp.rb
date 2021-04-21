@@ -12,8 +12,6 @@ class Attemp < ApplicationRecord
   validates :wrong_answers, presence: true,
                             numericality: { less_than_or_equal_to: 3, greater_than_or_equal_to: 0 }
 
-  private
-
   def update_score
     self.score = self.correct_answers.to_f / 3
   end

@@ -1,18 +1,13 @@
 class AttempsController < ApplicationController
-  # def new
-  #   @attemp = Attemp.new
-  #   @quiz = Quiz.find(params[:quiz_id])
-  #   @user = current_user
-  #   @questions = @quiz.questions
-  #   @attemp_answer = AttempAnswer.new
-  # end
-
   def show
     @attemp = Attemp.find(params[:id])
     @quiz = Quiz.find(params[:quiz_id])
     @user = current_user
     @questions = @quiz.questions
-    @question = @questions.each
+    # @question = @questions.each
+    # We could define @question = @question[0] if total_answers = 0
+    # Then @question = question[1] if total_answers = 1
+    # ...
     @attemp_answer = AttempAnswer.new
   end
 
@@ -39,6 +34,7 @@ class AttempsController < ApplicationController
   def down_score
     @attemp = Attemp.find(params[:id])
     @attemp.wrong_answers += 1
+    @attemp.update_score
     @attemp.save
   end
 

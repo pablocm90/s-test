@@ -1,19 +1,22 @@
 <h1>Attemp for <%= @quiz.title %></h1>
-<%= @question.next.content %>
+
 
 <% @questions.each do |question| %>
-  <h4><%= question.content %></h4>
-  <% question.answers.each do |answer| %>
-    <% if answer.right == true %>
-      <%= link_to up_score_quiz_attemp_path(@attemp), method: :patch do %>
-        <p><%= answer.right %></p>
-        <p><%= answer.content %></p>
-      <% end %>
-    <% elsif answer.right == false %>
-      <%= link_to down_score_quiz_attemp_path(@attemp), method: :patch do %>
-        <p><%= answer.right %></p>
-        <p><%= answer.content %></p>
+  <div class="question-block" data-question-id="<%= question.id %>">
+    <h4><%= question.content %></h4>
+    <% question.answers.each do |answer| %>
+      <% if answer.right == true %>
+        <%= link_to up_score_quiz_attemp_path(@attemp), method: :patch do %>
+          <p><%= answer.right %></p>
+          <p><%= answer.content %></p>
+        <% end %>
+      <% elsif answer.right == false %>
+        <%= link_to down_score_quiz_attemp_path(@attemp), method: :patch do %>
+          <p><%= answer.right %></p>
+          <p><%= answer.content %></p>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
+  </div>
 <% end %>
+
