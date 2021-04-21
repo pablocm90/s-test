@@ -1,4 +1,12 @@
 <h1><%= @quiz.title %></h1>
 <p>Difficulty: <%= @quiz.difficulty %></p>
 <p>Attemps: <%= @attemps.size %></p>
+<p>Last score: 
+  <% unless @attemps.last.nil? %>
+    @attemps.last.score
+  <% else %>
+    0
+  <% end %>
+</p>
+
 <div><%= link_to 'Start', new_quiz_attemp_path(@quiz) %></div>

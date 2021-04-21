@@ -7,7 +7,6 @@ class QuizzesController < ApplicationController
   end
 
   private
-
   def quiz_params
     params.require(:quiz).permit(:title, :difficulty)
   end

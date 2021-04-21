@@ -1,9 +1,21 @@
 class AttempsController < ApplicationController
-  def create
+  def new
     @quiz = Quiz.find(params[:quiz_id])
-    @attemp = Attemp.new(attemp_params)
-    @attemp.quiz = @quiz
     @user = current_user
+    @questions = @quiz.questions
+    @attemp = Attemp.new
+    @attemp_answer = AttempAnswer.new
+    raise
+  end
+
+  def create
+    @attemp = Attemp.new(attemp_params)
+
+    if @attemp.save
+      redirect_to quiz_path(@quiz)
+    else
+      render :new
+    end
   end
 
   private
