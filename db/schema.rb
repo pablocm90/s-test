@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2021_04_21_174055) do
   end
 
   create_table "attemps", force: :cascade do |t|
-    t.float "score"
+    t.float "score", default: 0.0, null: false
     t.integer "correct_answers", default: 0, null: false
     t.integer "wrong_answers", default: 0, null: false
     t.bigint "user_id", null: false
