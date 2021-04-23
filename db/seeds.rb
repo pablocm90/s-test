@@ -1,7 +1,7 @@
 require 'json'
 require 'open-uri'
 
-# We got the data from https://opentdb.com/api_config.php
+# We get the data from https://opentdb.com/api_config.php
 
 # Define an array of quizzes
 urls = ['https://opentdb.com/api.php?amount=3&category=10&difficulty=easy&type=multiple',
@@ -34,12 +34,12 @@ urls.each do |url|
     last_question = Question.create!(content: result["question"],
                                      quiz_id: last_quiz.id)
 
-    # Save right answer
+    # Store the right answer
     Answer.create!(content: result["correct_answer"],
                    right: true,
                    question_id: last_question.id)
 
-    # Iterate through the wrong answers and save it
+    # Iterate through the wrong answers and store it
     result["incorrect_answers"].each do |answer|
       Answer.create!(content: answer,
                      right: false,

@@ -1,16 +1,20 @@
+<!-- I have divided the quiz into three blocks. The javascript function "next_question" removes and appends the active class to show the current question. -->
+<!-- app/javascript/components/nex_question.js -->
+
 <h1><%= @quiz.title %></h1>
 
+<!-- The actions up_score & down_score are applied depending on whether the answer is correct or incorrect. -->
 <div class="question-block active" id="first-question-block">
-  <h4><%= @questions[0].content %></h4>
-  <% @questions[0].answers.each do |answer| %>
+  <h4><%= @questions[0].content.html_safe %></h4>
+  <% @questions[0].answers.shuffle.each do |answer| %>
     <div class="answers-block" id="first-answers-block">
       <% if answer.right == true %>
         <%= link_to up_score_quiz_attemp_path(@attemp), method: :patch do %>
-          <p><%= answer.content %></p>
+          <p><%= answer.content.html_safe %></p>
         <% end %>
       <% elsif answer.right == false %>
         <%= link_to down_score_quiz_attemp_path(@attemp), method: :patch do %>
-          <p><%= answer.content %></p>
+          <p><%= answer.content.html_safe %></p>
         <% end %>
       <% end %>
     </div>
@@ -19,16 +23,16 @@
 </div>
 
 <div class="question-block" id="second-question-block">
-  <h4><%= @questions[1].content %></h4>
-  <% @questions[1].answers.each do |answer| %>
+  <h4><%= @questions[1].content.html_safe %></h4>
+  <% @questions[1].answers.shuffle.each do |answer| %>
     <div class="answers-block" id="second-answers-block">
       <% if answer.right == true %>
         <%= link_to up_score_quiz_attemp_path(@attemp), method: :patch do %>
-          <p><%= answer.content %></p>
+          <p><%= answer.content.html_safe %></p>
         <% end %>
       <% elsif answer.right == false %>
         <%= link_to down_score_quiz_attemp_path(@attemp), method: :patch do %>
-          <p><%= answer.content %></p>
+          <p><%= answer.content.html_safe %></p>
         <% end %>
       <% end %>
     </div>
@@ -37,19 +41,22 @@
 </div>
 
 <div class="question-block" id="third-question-block">
-  <h4><%= @questions[2].content %></h4>
-  <% @questions[2].answers.each do |answer| %>
+  <h4><%= @questions[2].content.html_safe %></h4>
+  <% @questions[2].answers.shuffle.each do |answer| %>
     <div class="answers-block" id="third-answers-block">
       <% if answer.right == true %>
         <%= link_to up_score_quiz_attemp_path(@attemp), method: :patch do %>
-          <p><%= answer.content %></p>
+          <p><%= answer.content.html_safe %></p>
         <% end %>
       <% elsif answer.right == false %>
         <%= link_to down_score_quiz_attemp_path(@attemp), method: :patch do %>
-          <p><%= answer.content %></p>
+          <p><%= answer.content.html_safe %></p>
         <% end %>
       <% end %>
     </div>
   <% end %>
   <div>3/3</div>
 </div>
+
+<!-- Note: Because we received the response encoded from the API, we need to apply html_safe for its correct display -->
+<!-- Note 2: Because we always retrieve the correct answer in the first position of the API, we apply the shuffle method to make the answers appear randomly -->
