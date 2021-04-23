@@ -1,18 +1,9 @@
 class AttempsController < ApplicationController
-  # def new
-  #   @attemp = Attemp.new
-  #   @quiz = Quiz.find(params[:quiz_id])
-  #   @user = current_user
-  #   @questions = @quiz.questions
-  #   @attemp_answer = AttempAnswer.new
-  # end
-
   def show
     @attemp = Attemp.find(params[:id])
     @quiz = Quiz.find(params[:quiz_id])
     @user = current_user
     @questions = @quiz.questions
-    @attemp_answer = AttempAnswer.new
   end
 
   def create
@@ -28,8 +19,26 @@ class AttempsController < ApplicationController
     end
   end
 
-  def update_score
-    
+  def up_score
+    @attemp = Attemp.find(params[:id])
+    @attemp.correct_answers += 1
+    @attemp.total_answers += 1
+    @attemp.update_score
+    @attemp.save
+    if @attemp.total_answers == 3
+      redirect_to quiz_path(@attemp.quiz_id)
+    end
+  end
+
+  def down_score
+    @attemp = Attemp.find(params[:id])
+    @attemp.wrong_answers += 1
+    @attemp.total_answers += 1
+    @attemp.update_score
+    @attemp.save
+    if @attemp.total_answers == 3
+      redirect_to quiz_path(@attemp.quiz_id)
+    end
   end
 
   private

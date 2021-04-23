@@ -7,7 +7,6 @@ const printDataId = () => {
     // console.log(dataID);
     item.addEventListener("click", (event) => {
       const dataID = item.getAttribute('data-quiz-id');
-      console.log(dataID);
       fetch(`http://localhost:3000/quizzes/${dataID}`)
         .then((response) => {
           // console.log(response);

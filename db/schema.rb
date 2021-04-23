@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2021_04_21_174055) do
     t.float "score", default: 0.0, null: false
     t.integer "correct_answers", default: 0, null: false
     t.integer "wrong_answers", default: 0, null: false
+    t.integer "total_answers", default: 0, null: false
     t.bigint "user_id", null: false
     t.bigint "quiz_id", null: false
     t.datetime "created_at", precision: 6, null: false
