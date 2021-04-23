@@ -13,11 +13,13 @@ import "@fortawesome/fontawesome-free/css/all"
 // Components imports
 
 import { printDataId } from '../components/quiz_card_toggle'
+import { nextQuestion } from '../components/next_question'
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
 document.addEventListener('turbolinks:load', () => {
-  printDataId()
+  printDataId();
+  nextQuestion();
 });

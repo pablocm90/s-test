@@ -16,11 +16,11 @@
 ## User
  [ ] A user can log in with a valid username and password through a login screen
 
- [ ] A user can see a collection of quizzes
+ [X] A user can see a collection of quizzes
 
- [ ] A user can start a quizz
+ [X] A user can start a quizz
 
- [ ] A user can answer 3 questions on a quizz
+ [X] A user can answer 3 questions on a quizz
 
  [ ] A user can see the scores of his quizzes
 
@@ -30,12 +30,12 @@
 
  [ ] A quizz has a maximum of 3 questions
 
- [ ] A quizz is considered passed if +60% of questions are answered correctly
+ [X] A quizz is considered passed if +60% of questions are answered correctly
 
 ## Question
  [ ] A question has a maximum of 4 answers
 
- [ ] A question has only 1 possible correct answer
+ [X] A question has only 1 possible correct answer
 
 
 ## Bonus

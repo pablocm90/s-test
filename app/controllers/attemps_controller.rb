@@ -4,11 +4,6 @@ class AttempsController < ApplicationController
     @quiz = Quiz.find(params[:quiz_id])
     @user = current_user
     @questions = @quiz.questions
-    # @question = @questions.each
-    # We could define @question = @question[0] if total_answers = 0
-    # Then @question = question[1] if total_answers = 1
-    # ...
-    @attemp_answer = AttempAnswer.new
   end
 
   def create
@@ -27,15 +22,23 @@ class AttempsController < ApplicationController
   def up_score
     @attemp = Attemp.find(params[:id])
     @attemp.correct_answers += 1
+    @attemp.total_answers += 1
     @attemp.update_score
     @attemp.save
+    if @attemp.total_answers == 3
+      redirect_to quiz_path(@attemp.quiz_id)
+    end
   end
 
   def down_score
     @attemp = Attemp.find(params[:id])
     @attemp.wrong_answers += 1
+    @attemp.total_answers += 1
     @attemp.update_score
     @attemp.save
+    if @attemp.total_answers == 3
+      redirect_to quiz_path(@attemp.quiz_id)
+    end
   end
 
   private
