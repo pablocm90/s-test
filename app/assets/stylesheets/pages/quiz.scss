@@ -1,0 +1,32 @@
+.title-difficulty-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+}
+
+.score {
+  margin-bottom: 36px;
+  font-size: 45px;
+  padding: 4px 23px;
+  border-radius: 15px;
+}
+
+.quiz-welcome-msg {
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+#start-btn {
+  margin-top: 44px;
+  width: 163px;
+  height: 57px;
+  font-size: 20px;
+}
