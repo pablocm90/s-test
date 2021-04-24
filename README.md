@@ -22,26 +22,26 @@
 
  [X] A user can answer 3 questions on a quizz
 
- [ ] A user can see the scores of his quizzes
+ [X] A user can see the scores of his quizzes
 
 
 ## Quizz
  [X] A quizz has a Title
 
- [ ] A quizz has a maximum of 3 questions
+ [X] A quizz has a maximum of 3 questions
 
  [X] A quizz is considered passed if +60% of questions are answered correctly
 
 ## Question
- [ ] A question has a maximum of 4 answers
+ [X] A question has a maximum of 4 answers
 
- [X] A question has only 1 possible correct answer
+ [ ] A question has only 1 possible correct answer
 
 
 ## Bonus
 - Some nice to haves, when there is time to spare.
 
- [ ] A quizz can have a dificulty level
+ [X] A quizz can have a dificulty level
 
  [ ] Add admin role
 
