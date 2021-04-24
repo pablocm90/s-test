@@ -1,24 +1,26 @@
-<!-- We iterate through the quizzes & we display the score of the last attemp -->
-<h1><%= @quiz.title.html_safe %></h1>
-<div class="scores">
-  <% unless @attemps.last.nil? %>
-    <!-- [X] A quizz is considered passed if +60% of questions are answered correctly -->
-    <!-- [X] A user can see the scores of his quizzes -->
-    <% if @attemps.last.score >= 0.6 %>
-      <h4>Well done! You have passed this test!</h4>
-      <h4>Score: <%= (@attemps.last.score * 100).to_i %>%</h4>
-    <% else %>
-      <h4>Ouch, you have not passed this test! You need some train!</h4>
-      <h4>Score: <%= (@attemps.last.score * 100).to_i %>%</h4>
+<div class="container">
+  <!-- We iterate through the quizzes & we display the score of the last attemp -->
+  <h1><%= @quiz.title.html_safe %></h1>
+  <div class="scores">
+    <% unless @attemps.last.nil? %>
+      <!-- [X] A quizz is considered passed if +60% of questions are answered correctly -->
+      <!-- [X] A user can see the scores of his quizzes -->
+      <% if @attemps.last.score >= 0.6 %>
+        <h4>Well done! You have passed this test!</h4>
+        <h4>Score: <%= (@attemps.last.score * 100).to_i %>%</h4>
+      <% else %>
+        <h4>Ouch, you have not passed this test! You need some train!</h4>
+        <h4>Score: <%= (@attemps.last.score * 100).to_i %>%</h4>
+      <% end %>
     <% end %>
+  </div>
+
+  <p>Difficulty: <%= @quiz.difficulty %></p>
+
+  <!-- [X] A user can start a quizz -->
+  <%= simple_form_for [@quiz, @attemp] do |f| %>
+    <%= f.button :submit, "Start!", class: "btn btn-primary" %>
   <% end %>
 </div>
-
-<p>Difficulty: <%= @quiz.difficulty %></p>
-
-<!-- [X] A user can start a quizz -->
-<%= simple_form_for [@quiz, @attemp] do |f| %>
-  <%= f.button :submit, "Start!", class: "btn btn-primary" %>
-<% end %>
 
 <!-- Note: We recover encoded strings from the API. We use html_safe to display the string correctly - Example: @quiz.title.html_safe -->
