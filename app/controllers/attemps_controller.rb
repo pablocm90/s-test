@@ -19,7 +19,7 @@ class AttempsController < ApplicationController
     end
   end
 
-# These two methods allow us to increase the number of correct or incorrect answers, update the score and redirect us to the quiz show page once the quiz is finished
+  # These two methods allow us to increase the number of correct or incorrect answers, update the score and redirect us to the quiz show page once the quiz is finished
   def up_score
     @attemp = Attemp.find(params[:id])
     @attemp.correct_answers += 1

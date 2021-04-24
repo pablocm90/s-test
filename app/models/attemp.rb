@@ -16,6 +16,6 @@ class Attemp < ApplicationRecord
 
   # This method allows us to calculate the score each time we choose an answer.
   def update_score
-    self.score = correct_answers.to_f / 3
+    self.score = self.correct_answers.to_f / 3
   end
 end

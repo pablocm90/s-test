@@ -7,7 +7,7 @@
 
   <div class="score-box">
     <% if @attemps.last.nil? %>
-        <h4 class="quiz-welcome-msg">Welcome to this new WeQuiz test, and good luck!</h4>
+        <h4 class="quiz-welcome-msg">Welcome to this new WeQuiz test, good luck!</h4>
       <!-- [X] A quizz is considered passed if +60% of questions are answered correctly -->
       <!-- [X] A user can see the scores of his quizzes -->
       <% elsif @attemps.last.score >= 0.6 %>
