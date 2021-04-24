@@ -6,6 +6,10 @@
     color: white;
     text-decoration: none;
     &:hover {
+      font-weight: bold;
     }
   }
+  padding-left: 50px;
+  padding-right: 50px;
+  height: 100px;
 }

@@ -1,0 +1,52 @@
+// Place all the styles related to the attemps controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.active {
+  display: block !important;
+}
+
+.question-block {
+  display: none;
+
+}
+
+.questions-container {
+  margin-top: 54px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.answers-container {
+  margin: 55px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.answers-block {
+  text-decoration: none;
+  margin: 16px 0px;
+  border: 1px solid #175DDC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 11px;
+  height: 42px;
+  width: 672px;
+  a {
+    text-decoration: none;
+    color: #175DDC;
+  }
+  &:hover {
+    a {
+      color: white;
+    }
+    background-color: #175DDC;
+  }
+}
+
+.question-numeration {
+  font-weight: bold;
+}

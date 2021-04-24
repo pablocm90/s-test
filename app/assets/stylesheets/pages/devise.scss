@@ -1,0 +1,18 @@
+#devise-container {
+  width: 400px;
+  h2 {
+    text-align: center;
+  }
+}
+
+#log-btn {
+  width: 100%;
+}
+
+.devise-shared-links {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 25px;
+}
