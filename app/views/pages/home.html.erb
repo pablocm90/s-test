@@ -1,6 +1,7 @@
 <!-- We iterate through the quizzes & we display them + difficulty -->
 <div class="home-container">
   <div class="cards">
+    <!-- [X] A user can see a collection of quizzes -->
     <% @quizzes.each do |quiz| %>
       <%= link_to quiz_path(quiz) do %>
         <div class="quiz-card" data-quiz-id="<%= quiz.id %>">
