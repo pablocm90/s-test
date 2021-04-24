@@ -15,7 +15,8 @@
         <h4>Well done! You have passed this test!</h4>
       <% else %>
         <h4 class="score">Score: <%= (@attemps.last.score * 100).to_i %>%</h4>
-        <h4>Ouch, you have not passed this test! You need some train!</h4>
+        <h4>Ouch, you have not passed this test! You need some training...</h4>
+        <h4>Try again!</h4>
       <% end %>
     <!-- [X] A user can start a quizz -->
     <%= simple_form_for [@quiz, @attemp] do |f| %>
