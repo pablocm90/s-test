@@ -12,11 +12,11 @@
           <div class="answers-block" id="first-answers-block">
             <% if answer.right == true %>
               <%= link_to up_score_quiz_attemp_path(@attemp), method: :patch do %>
-                <p><%= answer.content.html_safe %></p>
+                <p class="answer-paragraphe"><%= answer.content.html_safe %></p>
               <% end %>
-            <% elsif answer.right == false %>
+            <% else %>
               <%= link_to down_score_quiz_attemp_path(@attemp), method: :patch do %>
-                <p><%= answer.content.html_safe %></p>
+                <p class="answer-paragraphe"><%= answer.content.html_safe %></p>
               <% end %>
             <% end %>
           </div>
@@ -32,11 +32,11 @@
           <div class="answers-block" id="second-answers-block">
             <% if answer.right == true %>
               <%= link_to up_score_quiz_attemp_path(@attemp), method: :patch do %>
-                <p><%= answer.content.html_safe %></p>
+                <p class="answer-paragraphe"><%= answer.content.html_safe %></p>
               <% end %>
-            <% elsif answer.right == false %>
+            <% else %>
               <%= link_to down_score_quiz_attemp_path(@attemp), method: :patch do %>
-                <p><%= answer.content.html_safe %></p>
+                <p class="answer-paragraphe"><%= answer.content.html_safe %></p>
               <% end %>
             <% end %>
           </div>
@@ -52,11 +52,11 @@
           <div class="answers-block" id="third-answers-block">
             <% if answer.right == true %>
               <%= link_to up_score_quiz_attemp_path(@attemp), method: :patch do %>
-                <p><%= answer.content.html_safe %></p>
+                <p class="answer-paragraphe"><%= answer.content.html_safe %></p>
               <% end %>
-            <% elsif answer.right == false %>
+            <% else %>
               <%= link_to down_score_quiz_attemp_path(@attemp), method: :patch do %>
-                <p><%= answer.content.html_safe %></p>
+                <p class="answer-paragraphe"><%= answer.content.html_safe %></p>
               <% end %>
             <% end %>
           </div>

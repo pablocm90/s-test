@@ -25,7 +25,7 @@
   align-items: center;
 }
 
-.answers-block {
+.answers- {
   text-decoration: none;
   margin: 16px 0px;
   border: 1px solid #175DDC;
@@ -43,6 +43,24 @@
     a {
       color: white;
     }
+    background-color: #175DDC;
+  }
+}
+
+.answer-paragraphe {
+  text-decoration: none;
+  margin: 16px 0px;
+  border: 1px solid #175DDC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 11px;
+  height: 42px;
+  width: 672px;
+  text-decoration: none;
+  color: #175DDC;
+  &:hover {
+    color: white;
     background-color: #175DDC;
   }
 }
