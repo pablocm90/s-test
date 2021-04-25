@@ -1,5 +1,9 @@
 ## Setup
- TO BE COMPLETED - heroku issue
+
+<h1>Welcome to WeQuizz!</h1>
+<p>You can test your knowledge of general culture <a href="https://we-quizz.herokuapp.com/">here</a>. Remember that you need to register to get started.</p>
+
+
 
 ## Guidelines
 - Fork this repository
@@ -14,7 +18,7 @@
   - You are asked to build a simple Quizz App
 
 ## User
- [ ] A user can log in with a valid username and password through a login screen
+ [X] A user can log in with a valid username and password through a login screen
 
  [X] A user can see a collection of quizzes
 
@@ -35,7 +39,7 @@
 ## Question
  [X] A question has a maximum of 4 answers
 
- [ ] A question has only 1 possible correct answer
+ [X] A question has only 1 possible correct answer
 
 
 ## Bonus
